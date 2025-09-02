@@ -123,3 +123,45 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* ajusta según el alto de tu header */
 }
+#acerca{
+  background-color: rgb(218, 208, 208);
+  text-align: center;
+  margin: auto;
+}
+#acerca h2{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color:#222;
+  border-bottom: 3px solid #3498bd;
+  padding-bottom: 5px;
+}
+
+#acerca p {
+  font-size: 1.1rem;
+  margin: 0.8rem 0;
+  color: #555;
+}
+#acerca ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#acerca ul li {
+  background: #3498db;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+#acerca ul li:hover {
+  background: #2980b9;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
