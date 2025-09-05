@@ -20,5 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+// 🔥 Modo oscuro
+  const temaoscuro = document.querySelector(".tema-oscuro");
+
+  temaoscuro.addEventListener("click", () => {
+    document.body.classList.toggle("modo-oscuro"); // activa/desactiva clase
+    temaoscuro.textContent = document.body.classList.contains("modo-oscuro")
+      ? "☀️ modo claro"
+      : "🌙 modo oscuro";
+  });
+
   window.addEventListener("scroll", changeActiveLink);
 });
