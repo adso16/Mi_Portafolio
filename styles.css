@@ -10,7 +10,58 @@ body {
   line-height: 1.6;
   background: #f5f5f5;
   color: #333;
+  transition: all 0.3s ease;
 }
+/* Fondo y texto general */
+body.modo-oscuro {
+  background: #222;
+  color: #f5f5f5;
+}
+
+/* Header */
+body.modo-oscuro header {
+  background-color: #111;
+}
+
+/* Tarjetas */
+body.modo-oscuro .card {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+/* Aplica a todas las secciones MENOS hero */
+body.modo-oscuro section:not(.hero) {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+
+/* Títulos */
+body.modo-oscuro h1,
+body.modo-oscuro h2,
+body.modo-oscuro h3 {
+  color: #f5f5f5;
+}
+
+/* Botones normales */
+body.modo-oscuro .btn {
+  color: #fff;
+  border-bottom: 1px solid #ff4d4d;
+}
+
+/* Botón de tema */
+.tema-oscuro {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+
+/* fin del tema oscuro */
+
+
 
 header {
   background: #222;
@@ -57,23 +108,19 @@ section {
 section:nth-child(even) {
   background: #e9ecef;
 }
-/*lo nuevo */
-.proyectos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
 .card {
-  background: white;
+   background: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   max-width: 300px;
   text-align: center;
   transition: transform 0.3s ease;
+
+  /* 👇 ajustes nuevos */
+  display: flex;
+  flex-direction: column;       /* organizar en columna */
+  justify-content: space-between; /* empujar el botón al fondo */
 }
 
 .card img {
@@ -88,11 +135,15 @@ section:nth-child(even) {
 
 .card p {
   padding: 0 15px 15px;
+  flex-grow: 1;   /* hace que el párrafo se expanda y empuje el botón hacia abajo */
 }
-
+.card .btn {
+  margin-top: auto; /* garantiza que quede al final */
+}
 .card:hover {
   transform: translateY(-5px);
 }
+
 /* Hero Section */
 .hero {
       background-image: url('https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
@@ -124,10 +175,29 @@ html {
   scroll-padding-top: 80px; /* ajusta según el alto de tu header */
 }
 #acerca{
-  background-color: rgb(218, 208, 208);
   text-align: center;
   margin: auto;
 }
+.perfil{
+     /*width: 150px;por si la imagen llega a hacer muy grande 
+  height: 150px;  */
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+}
+.Quiensoy{
+  text-align: center;
+  max-width: 800px;  /* para que no ocupe toda la pantalla */
+  margin: 40px auto;    /* centra horizontalmente el bloque */
+  padding: 20px;
+}
+.Quiensoy {
+  margin-top: 2rem; /* medida relativa al tamaño de fuente */
+  color: rgb(0, 0, 0);
+}
+
 #acerca h2{
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -164,4 +234,30 @@ html {
   background: #2980b9;
   transform: translateY(-3px);
   cursor: pointer;
+}
+
+
+#proyectos{
+  text-align: center;
+}
+#proyectos h1{
+  padding-bottom: 3rem;
+}
+.proyectos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  color: #201b1b;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.btn:hover{
+  border-bottom: 1px solid red;
 }
